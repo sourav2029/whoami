@@ -19,7 +19,3 @@ http://localhost:3000/api/whoami
 
 
 Example url if you want to test my aap
-
-https://tstamp-miniservice.herokuapp.com/dec 20, 2014
-
-https://tstamp-miniservice.herokuapp.com/1419013800000
