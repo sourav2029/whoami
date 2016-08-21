@@ -11,12 +11,21 @@ app.get('/',function(req,res){
 app.get('/api/whoami',function(req,res){
   var userAgent=req.headers['user-agent'].split('(')[1];
   var os=userAgent.split(')')[0];
-  console.log(os);
+  var ipAddr = req.headers["x-forwarded-for"];
+
+  if (ipAddr){
+    var list = ipAddr.split(",");
+    ipAddr = list[list.length-1];
+  } else {
+    ipAddr = req.connection.remoteAddress;
+  }
+    console.log(ipAddr);
   var object={
-    "ipaddress":req.ip/*req.headers['x-real-ip'] ||
-     req.connection.remoteAddress ||
-     req.socket.remoteAddress ||
-     req.connection.socket.remoteAddress*/,
+    "ipaddress":ipAddr/*req.headers['cf-connecting-ip'] ||
+    req.headers['x-forwarded-for'] ||
+    req.connection.remoteAddress ||
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress*/,
     "language":req.headers['accept-language'].split(',')[0],
     "software":os
   }
