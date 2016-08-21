@@ -19,3 +19,4 @@ http://localhost:3000/api/whoami
 
 
 Example url if you want to test my aap
+1)https://whoareyo.herokuapp.com/api/whoami
