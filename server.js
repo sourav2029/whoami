@@ -11,10 +11,6 @@ app.get('/',function(req,res){
 app.get('/api/whoami',function(req,res){
   var userAgent=req.headers['user-agent'].split('(')[1];
   var os=userAgent.split(')')[0];
-  console.log(req.headers['x-forwarded-for']);
-  console.log(req.connection.remoteAddress);
-  console.log(req.socket.remoteAddress);
-  console.log(req.connection.socket.remoteAddress);
   var ipAddr = req.headers["x-forwarded-for"];
 
   if (ipAddr){
