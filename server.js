@@ -11,6 +11,10 @@ app.get('/',function(req,res){
 app.get('/api/whoami',function(req,res){
   var userAgent=req.headers['user-agent'].split('(')[1];
   var os=userAgent.split(')')[0];
+  console.log(req.headers['x-forwarded-for']);
+  console.log(req.connection.remoteAddress);
+  console.log(req.socket.remoteAddress);
+  console.log(req.connection.socket.remoteAddress);
   var ipAddr = req.headers["x-forwarded-for"];
 
   if (ipAddr){
@@ -21,14 +25,14 @@ app.get('/api/whoami',function(req,res){
   }
     console.log(ipAddr);
   var object={
-    "ipaddress":ipAddr/*req.headers['cf-connecting-ip'] ||
-    req.headers['x-forwarded-for'] ||
+    "ipaddress":ipAddr||
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
-    req.connection.socket.remoteAddress*/,
+    req.connection.socket.remoteAddress,
     "language":req.headers['accept-language'].split(',')[0],
     "software":os
   }
+  console.log(object);
   res.send(object);
 })
 app.listen(port)
