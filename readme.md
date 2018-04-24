@@ -7,9 +7,9 @@ Sample output:
 {"ipaddress":"111.91.227.2","language":"en-US","software":"Windows NT 6.2; Win64; x64"}  
 
 ## Local Setup Instructions:  
-1)git clone https://github.com/sourav2029/whoami 
-2)move inside the directory
-3)node server.js
+1)git clone https://github.com/sourav2029/whoami   
+2)move inside the directory  
+3)node server.js  
 
 Sample url to test:
 http://localhost:3000/api/whoami
