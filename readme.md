@@ -1,7 +1,7 @@
 ## Implemetation of freecodecamp assignment https://www.freecodecamp.com/challenges/request-header-parser-microservice  
 
 User Story:  
-1)You can get the IP address, language and operating system for your browser.  
+1)Get the IP address, language and operating system for your browser.  
 
 Sample output:
 {"ipaddress":"111.91.227.2","language":"en-US","software":"Windows NT 6.2; Win64; x64"}  
